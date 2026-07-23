@@ -66,7 +66,7 @@ Because this repository utilizes a zero-build architecture, local testing requir
 Webcognita LLC is founded and managed by **Alan Pruitt**, a U.S. Marine Corps veteran, Google Certified Faculty member, and Curriculum Architect based in Yuma, Arizona.
 
 * 🌐 **LinkedIn Portfolio:** [linkedin.com/in/alanpruitt](https://www.linkedin.com/in/alanpruitt/)
-* 📍 **Business Base:** Yuma, Arizona (Licensed Veteran-Owned Small Business)
+* 📍 **Business Base:** Yuma, Arizona (City of Yuma Licensed Disabled Veteran-Owned Small Business)
 
 ---
 
