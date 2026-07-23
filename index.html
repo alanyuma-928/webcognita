@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Meta Description for SEO and Lighthouse Compliance -->
-    <meta name="description" content="Webcognita LLC provides technical consulting, curriculum architecture, and Generative AI strategy to accelerate operational velocity for businesses and allied health practices in Yuma and San Luis Río Colorado.">
+    <meta name="description" content="Webcognita LLC provides technical consulting, curriculum architecture, and Generative AI strategy led by Gemini Certified Faculty to accelerate operational velocity for businesses and health practices.">
     
-    <title>Webcognita LLC | Technical Consulting & Curriculum Architecture</title>
+    <title>Webcognita LLC | Technical Consulting & AI Strategy</title>
     <style>
         /* CSS Reset & Variable Definitions */
         *, *::before, *::after {
@@ -236,6 +236,51 @@
             transform: scale(1.02);
         }
 
+        /* Certification Card Styling */
+        .cert-card {
+            background-color: var(--bg-card);
+            border: 2px solid var(--accent-navy);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 16px;
+            box-shadow: 0 4px 12px rgba(11, 29, 58, 0.05);
+        }
+
+        @media (min-width: 520px) {
+            .cert-card {
+                flex-direction: row;
+                text-align: left;
+            }
+        }
+
+        .cert-badge-img {
+            width: 140px;
+            height: auto;
+            flex-shrink: 0;
+            border-radius: 8px;
+            padding: 4px;
+            background-color: #FFFFFF;
+        }
+
+        .cert-content h2 {
+            color: var(--accent-navy);
+            font-size: 1.15rem;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+
+        .cert-content p {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
         /* Products & Checkout Card Grid */
         .products-grid {
             display: flex;
@@ -451,7 +496,7 @@
             <!-- English Header -->
             <div lang="en">
                 <h1 class="sr-only">Webcognita LLC</h1>
-                <span class="badge">Veteran-Owned Small Business • Yuma, AZ</span>
+                <span class="badge">Veteran-Owned Small Business • Gemini Certified Faculty</span>
                 <p class="tagline">Technical Consulting • Curriculum Architecture • Generative AI Strategy</p>
                 <div class="cta-grid">
                     <a href="https://www.linkedin.com/in/alanpruitt/" target="_blank" rel="noopener noreferrer" class="btn-action">
@@ -465,7 +510,7 @@
             <!-- Spanish Header (Norteño Localized) -->
             <div lang="es">
                 <h1 class="sr-only">Webcognita LLC</h1>
-                <span class="badge">Empresa de Veteranos • Yuma, AZ & San Luis R.C.</span>
+                <span class="badge">Empresa de Veteranos • Gemini Certified Faculty</span>
                 <p class="tagline">Consultoría Técnica • Arquitectura de Capacitación • Estrategia de IA Generativa</p>
                 <div class="cta-grid">
                     <a href="https://www.linkedin.com/in/alanpruitt/" target="_blank" rel="noopener noreferrer" class="btn-action">
@@ -493,6 +538,21 @@
                 <a href="https://wa.me/message/UV7XFPRPEY6SL1" target="_blank" rel="noopener noreferrer" style="display: inline-block;">
                     <img src="whatsapp-qr.png" alt="Webcognita LLC WhatsApp Business Account QR Code" class="qr-image" width="210" height="210" loading="lazy">
                 </a>
+            </section>
+
+            <!-- GEMINI CERTIFIED FACULTY CALLOUT CARD -->
+            <section class="cert-card">
+                <img src="gemini-certified-faculty.png" alt="Google Gemini Certified Faculty Badge" class="cert-badge-img" width="140" height="140" loading="lazy">
+                <div class="cert-content">
+                    <div lang="en">
+                        <h2>Certified Google AI Leadership</h2>
+                        <p>All Webcognita audits, workshops, and AI strategy frameworks are architected by a <strong>Gemini Certified Faculty</strong> member, guaranteeing enterprise-grade rigor, ethical standards, and advanced prompt engineering.</p>
+                    </div>
+                    <div lang="es">
+                        <h2>Liderazgo Certificado en IA de Google</h2>
+                        <p>Todas las auditorías, talleres y estrategias de IA de Webcognita están diseñados por un instructor con certificación <strong>Gemini Certified Faculty</strong>, garantizando rigor técnico, ética y resultados reales para tu negocio.</p>
+                    </div>
+                </div>
             </section>
 
             <!-- STRIPE SERVICES & DIRECT CHECKOUT SECTION -->
