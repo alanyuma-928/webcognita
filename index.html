@@ -173,6 +173,28 @@
             text-decoration: underline;
         }
 
+        .btn-stripe {
+            background-color: var(--accent-navy);
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 12px 18px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border: 2px solid var(--accent-navy);
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+            margin-top: 10px;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-stripe:hover, .btn-stripe:focus {
+            background-color: var(--accent-blue);
+            color: #FFFFFF;
+            text-decoration: underline;
+        }
+
         /* WhatsApp Dedicated Scan Section */
         .whatsapp-card {
             background-color: var(--bg-card);
@@ -212,6 +234,56 @@
 
         .qr-image:hover, .qr-image:focus {
             transform: scale(1.02);
+        }
+
+        /* Products & Checkout Card Grid */
+        .products-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .product-card {
+            background-color: var(--bg-card);
+            border: 2px solid var(--accent-navy);
+            border-radius: 10px;
+            padding: 18px;
+            box-shadow: 0 4px 10px rgba(11, 29, 58, 0.04);
+        }
+
+        .product-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .product-title {
+            color: var(--accent-navy);
+            font-size: 1.1rem;
+            font-weight: 800;
+        }
+
+        .product-price {
+            background-color: var(--bg-box);
+            color: var(--accent-navy);
+            font-weight: 800;
+            font-size: 0.95rem;
+            padding: 4px 10px;
+            border-radius: 6px;
+            border: 1px solid var(--accent-blue);
+            white-space: nowrap;
+        }
+
+        .product-desc {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 12px;
         }
 
         /* TL;DR Summary Callout */
@@ -421,6 +493,56 @@
                 <a href="https://wa.me/message/UV7XFPRPEY6SL1" target="_blank" rel="noopener noreferrer" style="display: inline-block;">
                     <img src="whatsapp-qr.png" alt="Webcognita LLC WhatsApp Business Account QR Code" class="qr-image" width="210" height="210" loading="lazy">
                 </a>
+            </section>
+
+            <!-- STRIPE SERVICES & DIRECT CHECKOUT SECTION -->
+            <section id="services-section">
+                <div lang="en">
+                    <h2 class="section-title">Direct Registration & Consulting Services</h2>
+                </div>
+                <div lang="es">
+                    <h2 class="section-title">Servicios y Registro Directo</h2>
+                </div>
+
+                <div class="products-grid">
+                    <!-- Product 1: SLRC Studio Workshop Ticket -->
+                    <div class="product-card">
+                        <div class="product-header">
+                            <span class="product-title">
+                                <span lang="en">SLRC Studio Workshop Access</span>
+                                <span lang="es">Acceso al Taller SLRC Studio</span>
+                            </span>
+                            <span class="product-price">$49.00 USD</span>
+                        </div>
+                        <p class="product-desc">
+                            <span lang="en">Direct ticket to the hands-on 90-minute Generative AI workshop (Gemini, NotebookLM). Learn to automate clinical summaries and business workflows. Includes live template toolkit and direct WhatsApp follow-up.</span>
+                            <span lang="es">Entrada directa al taller práctico de 90 minutos sobre IA Generativa (Gemini, NotebookLM). Aprende a automatizar resúmenes clínicos y procesos de tu negocio. Incluye plantillas descargables y seguimiento por WhatsApp.</span>
+                        </p>
+                        <a href="https://buy.stripe.com/aFa3cvcqD4ApeHS0hqgMw02" target="_blank" rel="noopener noreferrer" class="btn-stripe">
+                            <span lang="en">Register for Workshop ($49 USD)</span>
+                            <span lang="es">Comprar Entrada al Taller ($49 USD)</span>
+                        </a>
+                    </div>
+
+                    <!-- Product 2: 1-on-1 Business AI Audit -->
+                    <div class="product-card">
+                        <div class="product-header">
+                            <span class="product-title">
+                                <span lang="en">1-on-1 Business AI Audit</span>
+                                <span lang="es">Auditoría de IA Empresarial (1 a 1)</span>
+                            </span>
+                            <span class="product-price">$249.00 USD</span>
+                        </div>
+                        <p class="product-desc">
+                            <span lang="en">A personalized 60-to-90 minute operational diagnostic for business owners and health practice leaders. We analyze manual bottlenecks and map out custom AI prompt architectures with 14 days of direct WhatsApp implementation support.</span>
+                            <span lang="es">Diagnóstico operativo individual de 60 a 90 minutos para dueños de empresas y directores de clínicas. Analizamos cuellos de botella e integramos IA a la medida con 14 días de soporte directo por WhatsApp.</span>
+                        </p>
+                        <a href="https://buy.stripe.com/bJeaEX2Q3c2RczK7JSgMw03" target="_blank" rel="noopener noreferrer" class="btn-stripe">
+                            <span lang="en">Book 1-on-1 Audit ($249 USD)</span>
+                            <span lang="es">Reservar Auditoría 1 a 1 ($249 USD)</span>
+                        </a>
+                    </div>
+                </div>
             </section>
 
             <!-- TL;DR Summary -->
