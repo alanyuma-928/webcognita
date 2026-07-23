@@ -43,6 +43,15 @@
             margin: 0 auto;
         }
 
+        /* Language Visibility Logic */
+        html[lang="en"] [lang="es"] {
+            display: none !important;
+        }
+
+        html[lang="es"] [lang="en"] {
+            display: none !important;
+        }
+
         /* Language Toggle Bar */
         .lang-switch {
             display: flex;
@@ -241,8 +250,10 @@
             font-weight: 600;
         }
 
-        /* Language visibility utility */
-        [lang="es"] { display: none; }
+        footer a {
+            color: var(--accent-navy);
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -381,25 +392,27 @@
     <!-- Client-side Language Toggle Script -->
     <script>
         function setLanguage(lang) {
-            const enElements = document.querySelectorAll('[lang="en"]');
-            const esElements = document.querySelectorAll('[lang="es"]');
             const btnEn = document.getElementById('btn-en');
             const btnEs = document.getElementById('btn-es');
 
             if (lang === 'es') {
-                enElements.forEach(el => el.style.display = 'none');
-                esElements.forEach(el => el.style.display = 'block');
+                document.documentElement.lang = 'es';
                 btnEs.classList.add('active');
                 btnEn.classList.remove('active');
-                document.documentElement.lang = 'es';
+                localStorage.setItem('webcognita_lang', 'es');
             } else {
-                esElements.forEach(el => el.style.display = 'none');
-                enElements.forEach(el => el.style.display = 'block');
+                document.documentElement.lang = 'en';
                 btnEn.classList.add('active');
                 btnEs.classList.remove('active');
-                document.documentElement.lang = 'en';
+                localStorage.setItem('webcognita_lang', 'en');
             }
         }
+
+        // Auto-detect or restore preferred language on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('webcognita_lang') || 'en';
+            setLanguage(savedLang);
+        });
     </script>
 </body>
 </html>
