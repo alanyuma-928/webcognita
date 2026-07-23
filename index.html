@@ -43,6 +43,35 @@
             margin: 0 auto;
         }
 
+        /* Language Toggle Bar */
+        .lang-switch {
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .lang-btn {
+            background-color: var(--bg-card);
+            color: var(--accent-navy);
+            border: 2px solid var(--accent-navy);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn.active {
+            background-color: var(--accent-navy);
+            color: #FFFFFF;
+        }
+
+        .lang-btn:hover, .lang-btn:focus {
+            outline: 2px solid var(--accent-blue);
+        }
+
         /* Mobile-First Header & Branding */
         header {
             background-color: var(--bg-card);
@@ -212,78 +241,165 @@
             font-weight: 600;
         }
 
-        footer a {
-            color: var(--accent-navy);
-            text-decoration: underline;
-        }
+        /* Language visibility utility */
+        [lang="es"] { display: none; }
     </style>
 </head>
 <body>
 
     <div class="container">
+        <!-- Language Switcher Bar -->
+        <div class="lang-switch" aria-label="Language selection">
+            <button class="lang-btn active" id="btn-en" onclick="setLanguage('en')">English</button>
+            <button class="lang-btn" id="btn-es" onclick="setLanguage('es')">Español</button>
+        </div>
+
         <!-- Header Section -->
         <header>
-            <span class="badge">Veteran-Owned Small Business • Yuma, AZ</span>
-            <h1>Webcognita LLC</h1>
-            <p class="tagline">Technical Consulting • Curriculum Architecture • Generative AI Strategy</p>
-            <a href="https://www.linkedin.com/in/alanpruitt/" target="_blank" rel="noopener noreferrer" class="btn-linkedin">
-                Connect on LinkedIn
-            </a>
+            <!-- English Header -->
+            <div lang="en">
+                <span class="badge">Veteran-Owned Small Business • Yuma, AZ</span>
+                <h1>Webcognita LLC</h1>
+                <p class="tagline">Technical Consulting • Curriculum Architecture • Generative AI Strategy</p>
+                <a href="https://www.linkedin.com/in/alanpruitt/" target="_blank" rel="noopener noreferrer" class="btn-linkedin">
+                    Connect on LinkedIn
+                </a>
+            </div>
+            <!-- Spanish Header (Norteño Localized) -->
+            <div lang="es">
+                <span class="badge">Empresa de Veteranos • Yuma, AZ & San Luis R.C.</span>
+                <h1>Webcognita LLC</h1>
+                <p class="tagline">Consultoría Técnica • Arquitectura de Capacitación • Estrategia de IA Generativa</p>
+                <a href="https://www.linkedin.com/in/alanpruitt/" target="_blank" rel="noopener noreferrer" class="btn-linkedin">
+                    Contacto Profesional en LinkedIn
+                </a>
+            </div>
         </header>
 
         <!-- TL;DR Summary -->
         <section class="summary-card">
-            <h2>TL;DR Summary</h2>
-            <p>Webcognita LLC provides technical consulting, curriculum architecture, and Generative AI integration strategies. It specializes in bridging complex technical systems with instructional design, high-accessibility web standards, and enterprise AI literacy framework implementation.</p>
+            <div lang="en">
+                <h2>TL;DR Summary</h2>
+                <p>Webcognita LLC provides technical consulting, curriculum architecture, and Generative AI integration strategies. It specializes in bridging complex technical systems with instructional design, high-accessibility web standards, and enterprise AI literacy framework implementation.</p>
+            </div>
+            <div lang="es">
+                <h2>Resumen Ejecutivo</h2>
+                <p>Webcognita LLC ofrece consultoría técnica especializada, diseño educativo y estrategias de Inteligencia Artificial Generativa. Nos enfocamos en resolver broncas administrativas y acelerar la velocidad operativa de empresas y clínicas de salud, combinando tecnología de punta con estándares internacionales de accesibilidad.</p>
+            </div>
         </section>
 
         <!-- About Section -->
         <section>
-            <h2 class="section-title">About Webcognita LLC</h2>
-            <p class="about-text">
-                Webcognita LLC is a specialized technology and curriculum consulting firm dedicated to advancing technical literacy, institutional agility, and modern digital infrastructure. By bridging high-level software engineering principles with evidence-based instructional design, Webcognita delivers modern, scalable, and fully accessible digital solutions.
-            </p>
+            <div lang="en">
+                <h2 class="section-title">About Webcognita LLC</h2>
+                <p class="about-text">
+                    Webcognita LLC is a specialized technology and curriculum consulting firm dedicated to advancing technical literacy, institutional agility, and modern digital infrastructure. By bridging high-level software engineering principles with evidence-based instructional design, Webcognita delivers modern, scalable, and fully accessible digital solutions.
+                </p>
+            </div>
+            <div lang="es">
+                <h2 class="section-title">Acerca de Webcognita LLC</h2>
+                <p class="about-text">
+                    Webcognita LLC es una firma de consultoría tecnológica orientada a impulsar la agilidad operativa y la adopción digital binacional. Unimos la precisión del desarrollo de software con la capacitación práctica para entregar soluciones digitales accesibles, escalables y listas para usarse desde el teléfono celular.
+                </p>
+            </div>
         </section>
 
         <!-- Core Capabilities & Offerings -->
         <section>
-            <h2 class="section-title">Core Capabilities & Offerings</h2>
-            <div class="capabilities-list">
-                <div class="capability-card">
-                    <h3>Generative AI Strategy & Implementation</h3>
-                    <p>Consulting on AI integration, faculty/workforce development, and the implementation of federal AI literacy frameworks across institutional and commercial workflows.</p>
+            <div lang="en">
+                <h2 class="section-title">Core Capabilities & Offerings</h2>
+                <div class="capabilities-list">
+                    <div class="capability-card">
+                        <h3>Generative AI Strategy & Implementation</h3>
+                        <p>Consulting on AI integration, faculty/workforce development, and the implementation of federal AI literacy frameworks across institutional and commercial workflows.</p>
+                    </div>
+                    <div class="capability-card">
+                        <h3>Curriculum Architecture & Educational Design</h3>
+                        <p>Engineering high-impact, accessible educational content grounded in rigorous "Single Source of Truth" (SSoT) standards, structured frameworks, and data-driven learning models.</p>
+                    </div>
+                    <div class="capability-card">
+                        <h3>Infrastructure-as-Code & Open Educational Resources (OER)</h3>
+                        <p>Building mobile-responsive, version-controlled repository workflows (using Markdown, GitHub, and modern IDE pipelines) to deploy zero-cost-barrier, highly accessible content.</p>
+                    </div>
+                    <div class="capability-card">
+                        <h3>Accessibility & UX Optimization</h3>
+                        <p>Designing and auditing digital media to strictly adhere to WCAG 2.1 AA standards, ensuring full screen-reader compatibility and high-contrast usability across diverse devices and environments.</p>
+                    </div>
                 </div>
+            </div>
 
-                <div class="capability-card">
-                    <h3>Curriculum Architecture & Educational Design</h3>
-                    <p>Engineering high-impact, accessible educational content grounded in rigorous "Single Source of Truth" (SSoT) standards, structured frameworks, and data-driven learning models.</p>
-                </div>
-
-                <div class="capability-card">
-                    <h3>Infrastructure-as-Code & Open Educational Resources (OER)</h3>
-                    <p>Building mobile-responsive, version-controlled repository workflows (using Markdown, GitHub, and modern IDE pipelines) to deploy zero-cost-barrier, highly accessible content.</p>
-                </div>
-
-                <div class="capability-card">
-                    <h3>Accessibility & UX Optimization</h3>
-                    <p>Designing and auditing digital media to strictly adhere to WCAG 2.1 AA standards, ensuring full screen-reader compatibility and high-contrast usability across diverse devices and environments.</p>
+            <div lang="es">
+                <h2 class="section-title">Capacidades y Servicios Principales</h2>
+                <div class="capabilities-list">
+                    <div class="capability-card">
+                        <h3>Estrategia e Implementación de IA Generativa</h3>
+                        <p>Consultoría directa para integrar herramientas de IA (Gemini, NotebookLM) en clínicas y negocios locales, reduciendo tiempos administrativos y acelerando la atención al cliente sin rodeos.</p>
+                    </div>
+                    <div class="capability-card">
+                        <h3>Arquitectura de Capacitación y Diseño Educativo</h3>
+                        <p>Diseño de programas de formación práctica bajo estándares rigurosos de "Fuente Única de Verdad" (SSoT), enfocados en el aprendizaje rápido y aplicable al trabajo diario.</p>
+                    </div>
+                    <div class="capability-card">
+                        <h3>Infraestructura como Código y Contenido Móvil</h3>
+                        <p>Despliegue de plataformas ligeras, optimizadas para teléfonos móviles y de cero costo de licenciamiento, garantizando acceso rápido desde cualquier lugar de la región.</p>
+                    </div>
+                    <div class="capability-card">
+                        <h3>Accesibilidad Digital y Optimización UX</h3>
+                        <p>Auditoría y diseño bajo norma WCAG 2.1 AA, asegurando máxima visibilidad bajo el sol y compatibilidad total con lectores de pantalla y dispositivos móviles.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Differentiator Section -->
         <section class="differentiator-box">
-            <h2>What Sets Webcognita Apart</h2>
-            <p>
-                Webcognita operates at the intersection of technical precision and human-centered design. Rather than applying one-size-fits-all software or training models, Webcognita structures custom, version-controlled workflows that ensure long-term scalability, strict regulatory alignment, and measurable outcomes for educational institutions, businesses, and agency partners.
-            </p>
+            <div lang="en">
+                <h2>What Sets Webcognita Apart</h2>
+                <p>
+                    Webcognita operates at the intersection of technical precision and human-centered design. Rather than applying one-size-fits-all software or training models, Webcognita structures custom, version-controlled workflows that ensure long-term scalability, strict regulatory alignment, and measurable outcomes for educational institutions, businesses, and agency partners.
+                </p>
+            </div>
+            <div lang="es">
+                <h2>El Sello de Webcognita</h2>
+                <p>
+                    Trabajamos desde la confianza y la precisión técnica. En lugar de vender software genérico, estructuramos procesos a la medida que resuelven cuellos de botella reales, garantizan el cumplimiento normativo y generan resultados inmediatos para empresas, clínicas del sector salud e instituciones de ambos lados de la frontera.
+                </p>
+            </div>
         </section>
 
         <!-- Footer -->
         <footer>
-            <p>© 2026 Webcognita LLC. Hosted via GitHub Pages. Mobile-First & WCAG 2.1 AA Compliant.</p>
+            <div lang="en">
+                <p>© 2026 Webcognita LLC. Hosted via GitHub Pages. Mobile-First & WCAG 2.1 AA Compliant.</p>
+            </div>
+            <div lang="es">
+                <p>© 2026 Webcognita LLC. Alojado en GitHub Pages. Diseño Móvil Accesible (WCAG 2.1 AA).</p>
+            </div>
         </footer>
     </div>
 
+    <!-- Client-side Language Toggle Script -->
+    <script>
+        function setLanguage(lang) {
+            const enElements = document.querySelectorAll('[lang="en"]');
+            const esElements = document.querySelectorAll('[lang="es"]');
+            const btnEn = document.getElementById('btn-en');
+            const btnEs = document.getElementById('btn-es');
+
+            if (lang === 'es') {
+                enElements.forEach(el => el.style.display = 'none');
+                esElements.forEach(el => el.style.display = 'block');
+                btnEs.classList.add('active');
+                btnEn.classList.remove('active');
+                document.documentElement.lang = 'es';
+            } else {
+                esElements.forEach(el => el.style.display = 'none');
+                enElements.forEach(el => el.style.display = 'block');
+                btnEn.classList.add('active');
+                btnEs.classList.remove('active');
+                document.documentElement.lang = 'en';
+            }
+        }
+    </script>
 </body>
 </html>
